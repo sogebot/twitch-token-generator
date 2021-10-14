@@ -19,7 +19,7 @@ router.get("/", async ({query}) => {
       })
       if (response.ok) {
         const data = await response.json()
-        return new Response(`Access token: ${data.access_token}\nRefresh token: ${data.refresh_token}`, {
+        return new Response(`Access token: ${data.access_token}\nRefresh token: ${data.refresh_token}\nClient ID: ${CLIENT_ID}`, {
           headers: { 'content-type': 'text/plain' },
         })
       }
