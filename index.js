@@ -74,7 +74,10 @@ router.post("/refresh/:token", async ({ params }) => {
       console.error(e)
     }
   }
-  return new Response("400, refresh token incorrect!", { status: 400 })
+
+  return new Response(JSON.stringify({ message: 'Invalid refresh token received' }), {
+    headers: { 'content-type': 'application/json' }, status: 400
+  })
 })
 
 router.all("*", () => new Response("404, not found!", { status: 404 }))
