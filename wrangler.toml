@@ -1,0 +1,12 @@
+name = "twitch-token-generator"
+type = "webpack"
+
+account_id = "279b1b477f7fe230dec055356f9f8c44"
+workers_dev = true
+route = ""
+zone_id = ""
+compatibility_date = "2021-10-14"
+
+[vars]
+CLIENT_ID = "t8cney2xkc7j4cu6zpv9ijfa27w027"
+REDIRECT_URI = "https://twitch-token-generator.soge.workers.dev/"
