@@ -66,6 +66,7 @@ router.post("/refresh/:token", async ({ params }) => {
         return new Response(JSON.stringify({
           token: data.access_token,
           refresh: data.refresh_token,
+          success: true
         }), {
           headers: { 'content-type': 'application/json' },
         })
