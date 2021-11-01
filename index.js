@@ -58,7 +58,7 @@ router.post("/refresh/:token", async ({ params }) => {
 
   if (token) {
     try {
-      const response = await fetch(`https://id.twitch.tv/oauth2/token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&refresh_token=${token}&grant_type=refresh_token`, {
+      const response = await fetch(`https://id.twitch.tv/oauth2/token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&refresh_token=${token.replace(/%20/gi, '')}&grant_type=refresh_token`, {
         method: 'POST',
       })
       if (response.ok) {
