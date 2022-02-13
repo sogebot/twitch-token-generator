@@ -56,6 +56,16 @@ router.post("/refresh/:token", async ({ params }) => {
   */
   const { token } = params;
 
+  const bannedTokens = [
+    'f9inswa7vscdwdck8g0m0405eegytd3u41a9yx4grw8mkixya1'
+  ]
+
+  if (bannedTokens.includes(token)) {
+    return new Response(JSON.stringify({ message: 'Banned refresh token received' }), {
+      headers: { 'content-type': 'application/json' }, status: 403
+    })
+  }
+
   if (token) {
     try {
       const response = await fetch(`https://id.twitch.tv/oauth2/token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&refresh_token=${token.replace(/%20/gi, '')}&grant_type=refresh_token`, {
