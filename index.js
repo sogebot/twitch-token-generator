@@ -57,7 +57,8 @@ router.post("/refresh/:token", async ({ params }) => {
   const { token } = params;
 
   const bannedTokens = [
-    'f9inswa7vscdwdck8g0m0405eegytd3u41a9yx4grw8mkixya1'
+    'f9inswa7vscdwdck8g0m0405eegytd3u41a9yx4grw8mkixya1',
+    '8ur3jam2cr5nvrrfjau6ycv39s1ob60bgyhben365w6g5x5jkp'
   ]
 
   if (bannedTokens.includes(token)) {
